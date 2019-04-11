@@ -1,4 +1,105 @@
 /* TODO: Make it awesome */
+body > header {
+  background: #800000;
+  height: 50px;
+  color: #efefef;
+  line-height: 50px;
+  margin-bottom: 30px;
+}
+
+body > header h1 {
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 25px;
+  margin-right: 500px;
+}
+
+header ul {
+  float: right;
+  margin-right: 30px;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+header nav ul li a {
+  color: #efefef;
+}
+
+#itemCount:before {
+    content: '(';
+}
+
+#itemCount:after {
+    content: ')';
+}
+
+#itemCount {
+  font-weight: bold;
+}
+
+html
+{
+  background-color: rgb(183, 145, 145);
+}
+.deck col-2
+{
+  margin: 25px auto;
+  border: 5px dashed black;
+  width: 75%;
+  background-color: rgb(120, 52, 52);
+  font-family: sans-serif;
+  color: white;
+
+}
+.deck col-2 span
+{
+  background-color: rgb(72, 65, 65);
+  color: white;
+}
+.deck col-2 card
+{
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid black;
+  width: 75%;
+  /* background-color: rgb(173, 161, 161); */
+  background-color: aqua;
+  color: white;
+  font-family: sans-serif;
+} 
+p{
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid black;
+  width: 75%;
+  /* background-color: rgb(173, 161, 161); */
+  background-color: rgb(88, 112, 112);
+  color: white;
+  font-family: sans-serif;
+}
+#catalog
+{
+  text-align: center;
+  margin: 25px auto;
+  border: 2px solid black;
+  width: 75%;
+  background-color: rgb(83, 73, 73);
+  font-family: sans-serif;
+  color: white;
+}
+footer
+{
+  margin: 10% auto;
+  border: 3px solid black;
+  padding: 25px;
+  width: 80%;
+  background-color: rgb(72, 65, 65);
+  text-align: center;
+}
 
 .deck, .col-1 {
   width: 75%;
