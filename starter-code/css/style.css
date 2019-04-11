@@ -44,3 +44,34 @@
 #cart tbody tr:nth-child(2n) {
   background-color: lightgreen;
 }
+
+.card form {
+  width: 35%;
+  border: solid black;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+}
+
+input {
+  width: 95%;
+  margin: 5px auto;
+}
+
+input[type=submit] {
+  margin: 25px auto;
+}
+
+.card p {
+  animation: move infinite 5s;
+  color: red;
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+@keyframes move {
+  0%{transform: translateX(25px)};
+  50%{transform: translateX(-50px)};
+  100%{transform: translateX(25px)}
+}
