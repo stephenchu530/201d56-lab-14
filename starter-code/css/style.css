@@ -1,4 +1,63 @@
-/* TODO: Make it awesome */
+html
+{
+  background-color: rgb(183, 145, 145);
+}
+.deck col-2
+{
+  margin: 25px auto;
+  border: 5px dashed black;
+  width: 75%;
+  background-color: rgb(120, 52, 52);
+  font-family: sans-serif;
+  color: white;
+
+}
+.deck col-2 span
+{
+  background-color: rgb(72, 65, 65);
+  color: white;
+}
+.deck col-2 card
+{
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid black;
+  width: 75%;
+  /* background-color: rgb(173, 161, 161); */
+  background-color: aqua;
+  color: white;
+  font-family: sans-serif;
+}
+p
+{
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid black;
+  width: 75%;
+  /* background-color: rgb(173, 161, 161); */
+  background-color: rgb(88, 112, 112);
+  color: white;
+  font-family: sans-serif;
+}
+#catalog
+{
+  text-align: center;
+  margin: 25px auto;
+  border: 2px solid black;
+  width: 75%;
+  background-color: rgb(83, 73, 73);
+  font-family: sans-serif;
+  color: white;
+}
+footer
+{
+  margin: 50% auto;
+  border: 3px solid black;
+  padding: 25px;
+  width: 80%;
+  background-color: rgb(72, 65, 65);
+  text-align: center;
+=======
 
 .deck, .col-1 {
   width: 75%;
@@ -43,4 +102,5 @@
 
 #cart tbody tr:nth-child(2n) {
   background-color: lightgreen;
+
 }
