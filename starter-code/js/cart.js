@@ -20,25 +20,25 @@ function renderCart() {
 
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {
-  let tableBody = table.getElementsByTagName('tbody')
+  let tableBody = table.getElementsByTagName('tbody');
   tableBody[0].innerHTML = '';
 }
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
-  for (let i = 0; i < cart.items.items.length; i++) {
-    console.log('hehe');
+  for (let i = 0; i < cart.items.length; i++) {
+    let tableBody = table.getElementsByTagName('tbody');
     let itemRow = document.createElement('tr');
     let removeColumn = document.createElement('td');
     let productColumn = document.createElement('td');
     let quantityColumn = document.createElement('td');
     removeColumn.textContent = 'X';
-    productColumn.textContent = cart.items.items[i].product;
-    quantityColumn.textContent = cart.items.items[i].quantity;
+    productColumn.textContent = cart.items[i].product;
+    quantityColumn.textContent = cart.items[i].quantity;
     itemRow.appendChild(removeColumn);
     itemRow.appendChild(productColumn);
     itemRow.appendChild(quantityColumn);
-    table.childNodes[1].appendChild(itemRow);
+    tableBody[0].appendChild(itemRow);
   }
 
 
@@ -54,6 +54,8 @@ function showCart() {
 function removeItemFromCart(event) {
   if (event.target.textContent === 'X' && event.target.parentNode.rowIndex > 0) {
     cart.removeItem(parseInt(event.target.parentNode.rowIndex - 1));
+    console.log('what going on');
+    console.log(cart);
     cart.saveToLocalStorage();
     renderCart();
   }
