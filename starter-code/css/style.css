@@ -1,1 +1,37 @@
 /* TODO: Make it awesome */
+body > header {
+  background: #800000;
+  height: 50px;
+  color: #efefef;
+  line-height: 50px;
+  margin-bottom: 30px;
+}
+
+body > header h1 {
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 25px;
+  margin-right: 500px;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+header nav ul li a {
+  color: #efefef;
+}
+
+#itemCount:before {
+    content: '(';
+}
+
+#itemCount:after {
+    content: ')';
+}
+
+#itemCount {
+  font-weight: bold;
+}
