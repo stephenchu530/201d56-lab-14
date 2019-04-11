@@ -1,1 +1,46 @@
 /* TODO: Make it awesome */
+
+.deck, .col-1 {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: auto;
+  background-color: burlywood;
+}
+
+.col-1 .card h1 {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.col-1 .card {
+  width: 100%;
+}
+
+#cart {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid royalblue;
+}
+
+#cart th, #cart td {
+  padding: 15px 15px;
+}
+
+#cart thead{
+  font-weight: bold;
+  font-size: 25px;
+  border-bottom: solid royalblue;
+}
+
+#cart tbody tr:nth-child(2n) {
+  background-color: lightgreen;
+}
