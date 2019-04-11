@@ -31,13 +31,22 @@ function showCart() {
     let itemRow = document.createElement('tr');
     let removeColumn = document.createElement('td');
     let productColumn = document.createElement('td');
+    let img = document.createElement('img');
+    Product.allProducts.forEach(function(item) {
+      if (item.name === cart.items[i].product) {
+        img.setAttribute('src', item.filePath);
+        img.setAttribute('width', 75);
+        img.setAttribute('height', 75);
+        img.setAttribute('alt', item.name);
+        img.setAttribute('title', item.name);
+      }
+    });
     let quantityColumn = document.createElement('td');
     removeColumn.textContent = 'X';
-    productColumn.textContent = cart.items[i].product;
     quantityColumn.textContent = cart.items[i].quantity;
     itemRow.appendChild(removeColumn);
-    itemRow.appendChild(productColumn);
     itemRow.appendChild(quantityColumn);
+    itemRow.appendChild(img);
     tableBody[0].appendChild(itemRow);
   }
 
