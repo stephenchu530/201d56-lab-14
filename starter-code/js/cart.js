@@ -42,6 +42,63 @@ function showCart() {
   }
 
 
+
+
+  let consumerBlock = table.parentNode;
+  let consumerForm = document.createElement('form');
+  let consumerField = document.createElement('fieldset')
+
+  let nameInput = document.createElement('input');
+  let addressInput = document.createElement('input');
+  let cityInput = document.createElement('input');
+  let stateInput = document.createElement('input');
+  let zipCodeInput = document.createElement('input');
+  let phoneNumberInput = document.createElement('input');
+  let creditCardInput = document.createElement('input');
+  let submitInput = document.createElement('input');
+  submitInput.setAttribute('type', 'submit');
+  submitInput.setAttribute('onclick', 'removeItemFromCart(event)');
+
+  let nameLabel = document.createElement('label');
+  nameLabel.textContent = 'Name';
+  let addressLabel = document.createElement('label');
+  addressLabel.textContent = 'Address';
+  let cityLabel = document.createElement('label');
+  cityLabel.textContent = 'City';
+  let stateLabel = document.createElement('label');
+  stateLabel.textContent = 'State';
+  let zipCodeLabel = document.createElement('label');
+  zipCodeLabel.textContent = 'Zip';
+  let phoneLabel = document.createElement('label');
+  phoneLabel.textContent = 'Phone';
+  let creditCardLabel = document.createElement('label');
+  creditCardLabel.textContent = 'Credit Card';
+
+  consumerField.appendChild(nameLabel);
+  consumerField.appendChild(nameInput);
+
+  consumerField.appendChild(addressLabel);
+  consumerField.appendChild(addressInput);
+
+  consumerField.appendChild(cityLabel);
+  consumerField.appendChild(cityInput);
+
+  consumerField.appendChild(stateLabel);
+  consumerField.appendChild(stateInput);
+
+  consumerField.appendChild(zipCodeLabel);
+  consumerField.appendChild(zipCodeInput);
+
+  consumerField.appendChild(phoneLabel);
+  consumerField.appendChild(phoneNumberInput);
+
+  consumerField.appendChild(creditCardLabel);
+  consumerField.appendChild(creditCardInput);
+  consumerField.appendChild(submitInput);
+
+  consumerForm.appendChild(consumerField);
+  consumerBlock.appendChild(consumerForm);
+
   // TODO: Find the table body
 
   // TODO: Iterate over the items in the cart
@@ -52,12 +109,23 @@ function showCart() {
 }
 
 function removeItemFromCart(event) {
+  event.preventDefault();
   if (event.target.textContent === 'X' && event.target.parentNode.rowIndex > 0) {
     cart.removeItem(parseInt(event.target.parentNode.rowIndex - 1));
-    console.log('what going on');
-    console.log(cart);
     cart.saveToLocalStorage();
     renderCart();
+  } else if (event.type === 'click') {
+
+    cart.items = [];
+
+    cart.saveToLocalStorage();
+    clearCart();
+
+    let animation = document.getElementsByTagName('form')[0].parentNode;
+    let message = document.createElement('p');
+    message.textContent = 'Order Confirm';
+    animation.appendChild(message);
+    event.preventDefault();
   }
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
   // TODO: Save the cart back to local storage
