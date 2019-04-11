@@ -21,23 +21,24 @@ function renderCart() {
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {
   let tableBody = table.getElementsByTagName('tbody')
-  tableBody[i].innerHTML = '';
+  tableBody[0].innerHTML = '';
 }
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
-  for (let i = 0; i < cart.items.length; i++) {
+  for (let i = 0; i < cart.items.items.length; i++) {
+    console.log('hehe');
     let itemRow = document.createElement('tr');
     let removeColumn = document.createElement('td');
     let productColumn = document.createElement('td');
     let quantityColumn = document.createElement('td');
     removeColumn.textContent = 'X';
-    productColumn.textContent = cart.items[i].product;
-    quantityColumn.textContent = cart.items[i].quantity;
-    itemRow.appendChild(tableItem1);
-    itemRow.appendChild(tableItem2);
-    itemRow.appendChild(tableItem3);
-    table.appendChild(tableRow);
+    productColumn.textContent = cart.items.items[i].product;
+    quantityColumn.textContent = cart.items.items[i].quantity;
+    itemRow.appendChild(removeColumn);
+    itemRow.appendChild(productColumn);
+    itemRow.appendChild(quantityColumn);
+    table.childNodes[1].appendChild(itemRow);
   }
 
 

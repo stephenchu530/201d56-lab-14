@@ -11,10 +11,10 @@ function populateForm() {
 
   //TODO: Add an <option> tag inside the form's select for each product
   var selectElement = document.getElementById('items');
-  var option = document.createElement('option');
-  for (var i in Product.allProducts) {
+  for (let i = 0; i < Product.allProducts.length; i++) {
+    var option = document.createElement('option');
     option.text = Product.allProducts[i].name;
-    selectElement.add(option);
+    selectElement.appendChild(option);
   }
 
 }
@@ -41,13 +41,13 @@ function addSelectedItemToCart() {
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
   var item = document.getElementById('items').value;
-  var quanity = document.getElementById('quanity').value;
+  var quanity = document.getElementById('quantity').value;
   cart.addItem(item,quanity);
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
-  var itemCount = document.getElementById('itemcount');
+  var itemCount = document.getElementById('itemCount');
   itemCount.textContent = cart.items.length;
 
 }
@@ -59,7 +59,7 @@ function updateCartPreview() {
   var cartContents = document.getElementById('cartContents');
   var lastItem = cart.items[cart.items.length-1];
   var p = document.createElement('p');
-  p.textContent = 'You added ' + lastItem.quanity + ' ' + lastItem.name;
+  p.textContent = 'You added ' + lastItem.quantity + ' ' + lastItem.product;
   cartContents.appendChild(p);
 }
 
