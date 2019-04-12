@@ -136,6 +136,7 @@ function removeItemFromCart(event) {
     let message = document.createElement('p');
     message.textContent = 'Order Confirm';
     animation.appendChild(message);
+    document.getElementsByTagName('form')[0].reset();
     event.preventDefault();
   }
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
