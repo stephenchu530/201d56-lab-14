@@ -71,6 +71,12 @@ html
   color: white;
   font-family: sans-serif;
 } 
+legend
+{
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
 p{
   text-align: center;
   margin: 0 auto;
@@ -91,6 +97,16 @@ p{
   font-family: sans-serif;
   color: white;
 }
+#items
+{
+  
+  width: 25%;
+}
+#quantity
+{
+  width: 15%;
+}
+
 footer
 {
   margin: 10% auto;
