@@ -164,7 +164,7 @@ input[type=submit] {
   margin: 25px auto;
 }
 
-.card p {
+.card p, a {
   animation: move infinite 5s;
   color: red;
   margin-top: 10px;

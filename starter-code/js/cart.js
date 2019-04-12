@@ -122,9 +122,11 @@ function removeItemFromCart(event) {
   if (event.target.textContent === 'X' && event.target.parentNode.rowIndex > 0) {
     cart.removeItem(parseInt(event.target.parentNode.rowIndex - 1));
     cart.saveToLocalStorage();
-    renderCart();
-  } else if (event.type === 'click') {
+    let form = document.getElementsByTagName('form')[0];
+    form.parentNode.removeChild(form);
 
+    renderCart();
+  } else if (event.target.type === 'submit') {
     cart.items = [];
 
     cart.saveToLocalStorage();

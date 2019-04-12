@@ -42,7 +42,7 @@ function addSelectedItemToCart() {
   // TODO: using those, add one item to the Cart
   var item = document.getElementById('items').value;
   var quanity = document.getElementById('quantity').value;
-  cart.addItem(item,quanity);
+  cart.addItem(item, quanity);
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
@@ -54,13 +54,27 @@ function updateCounter() {
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
+  let aTag = document.getElementById('name-link');
+  if (aTag !== null) {
+    aTag.parentNode.removeChild(aTag);
+  }
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
   var cartContents = document.getElementById('cartContents');
-  var lastItem = cart.items[cart.items.length-1];
+  var lastItem = cart.items[cart.items.length - 1];
   var p = document.createElement('p');
   p.textContent = 'You added ' + lastItem.quantity + ' ' + lastItem.product;
   cartContents.appendChild(p);
+
+  let pLink = document.createElement('p');
+  let link = document.createElement('a');
+  link.setAttribute('id','name-link');
+  link.textContent = 'Good Choice. Click to see your cart!';
+  link.href = 'cart.html';
+
+  cartContents.appendChild(pLink);
+  pLink.appendChild(link);
+  document.getElementById('catalog').reset();
 }
 
 // Set up the "submit" event listener on the form.
